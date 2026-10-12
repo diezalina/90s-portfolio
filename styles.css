@@ -1,0 +1,384 @@
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.silkscreen-regular {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(#ffffff, #eacaff);
+    font-size: clamp(15px, 1.4vw, 18px);
+    padding-bottom: 6rem;
+    cursor:
+        url("assets/cursor-morado.gif") 0 0,
+        auto;
+}
+
+/* ---------- Banner ---------- */
+
+.banner {
+    display: grid;
+    place-items: center;
+    padding: 0.2rem;
+}
+
+.banner img {
+    max-width: 500px;
+    height: auto;
+    width: min(90%, 500px);
+}
+
+/* ---------- Layout ---------- */
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr 1fr;
+    gap: 1rem;
+
+    max-width: 1400px;
+    margin: auto;
+    padding: 1rem;
+    align-items: stretch;
+}
+
+/* ---------- Images ---------- */
+
+.pfp {
+    width: min(100%, 280px);
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.chao {
+    text-align: center;
+}
+
+.chao img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Chat Windows ---------- */
+
+.chatbox {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    font-family: "VT323", monospace;
+
+    background: linear-gradient(to bottom, #ffffff, rgb(255, 230, 254));
+
+    border: 3px solid white;
+
+    box-shadow:
+        inset 0 0 0 2px #c08eff,
+        inset 0 0 0 4px white,
+        0 0 20px rgba(163, 100, 255, 0.5);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.chat-content {
+    padding: 0.75rem;
+    overflow-wrap: anywhere;
+}
+
+.chatheader {
+    font-family: "Silkscreen", sans-serif;
+
+    min-height: 38px;
+
+    background: linear-gradient(to bottom, #ecd3fe, #a37dc0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px 8px;
+
+    color: white;
+
+    text-shadow: 1px 1px #8b67a3;
+
+    border-bottom: 2px solid white;
+}
+
+.title {
+    flex: 1;
+    min-width: 0;
+
+    font-size: clamp(12px, 2vw, 16px);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: flex;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.buttons button {
+    width: 20px;
+    height: 20px;
+
+    padding: 0;
+
+    border: 2px solid white;
+
+    background: linear-gradient(#ffffff, #ecd5ff);
+
+    cursor:
+        url("assets/pointer-morado.png") 0 0,
+        pointer;
+}
+
+.buttons button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ---------- Contact Buttons ---------- */
+
+.contact-table {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.contact-row {
+    display: flex;
+}
+
+.contact-row .btn-look {
+    width: 100%;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-look {
+    width: 100%;
+    font-size: clamp(15px, 1.4vw, 18px);
+
+    padding: 0.75rem 1rem;
+
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+
+    color: #ee56d9;
+
+    background: linear-gradient(#ffffff, #ffc1fe);
+
+    border: 2px solid rgba(240, 100, 255, 0.5);
+
+    border-radius: 25px;
+
+    cursor:
+        url("assets/pointer-morado.png") 0 0,
+        pointer;
+
+    transition: 0.3s;
+
+    min-height: 44px;
+}
+
+.btn-look:hover {
+    background: linear-gradient(#ffc1fe, #ffffff);
+    color: rgba(255, 100, 240, 0.72);
+}
+
+.btn-icon {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .banner img {
+        width: min(90%, 500px);
+    }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 2rem;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .left,
+    .middle,
+    .right {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+
+    .middle {
+        max-width: none;
+    }
+
+    .portfolio-box {
+        min-height: 280px;
+    }
+
+    .carousel-track img {
+        height: 180px;
+    }
+
+    .buttons button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-look {
+        font-size: 0.9rem;
+    }
+
+    .toolbox {
+        padding: 1rem;
+    }
+
+    .skill-icon {
+        font-size: 0.8rem;
+    }
+}
+
+/* ---------- Carousel ---------- */
+
+.portfolio-box {
+    min-height: 350px;
+    height: auto;
+}
+
+.portfolio-box .chat-content {
+    flex: 1;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.portfolio-carousel {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.carousel-track img {
+    height: clamp(160px, 30vw, 320px);
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/*---- columns -----*/
+.left,
+.middle,
+.right {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/*----- skillbox -----*/
+.middle {
+    width: 100%;
+    max-width: 700px;
+    max-height: fit-content;
+}
+
+.skill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.35rem 0.7rem;
+    white-space: nowrap;
+    /*---- font-size:clamp(.8rem,2vw,1rem); ----*/
+    font-size: clamp(15px, 1.4vw, 18px);
+
+    border: groove;
+    border-radius: 2px;
+    border-color: #ffc1fe;
+
+    background: radial-gradient(#ffffff, #ffc1fe);
+    color: rgb(178, 46, 231);
+}
+
+.toolbox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 5%;
+}
+
+.tool-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.table-header {
+    font-weight: bold;
+    border-bottom: dotted;
+    font-size: clamp(15px, 1.4vw, 18px);
+    border-bottom-color: rgb(163, 100, 255);
+    color: rgb(163, 100, 255);
+    font-family: "Silkscreen", sans-serif;
+}
+
+.table-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/*----- Learning box -----*/
+.learning-box {
+    min-height: 70px;
+    height: auto;
+
+    display: inline-flexbox;
+    align-content: center;
+    justify-self: center;
+}
